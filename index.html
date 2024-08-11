@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Nacionalidade</title>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="button"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#res {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+}
+    </style>
+
+</head>
+<body>
+
+    <h1>Consulta de Nacionalidade Brasileira</h1>
+
+    Digite aqui o país que você nasceu: <input type="text" name="consulta" id="consulta">
+    <input type="button" value="Consultar" onclick="verificar()">
+
+    <div id="res"> 
+
+    </div>
+
+    <script> 
+
+    function verificar() {
+
+        var country = document.getElementById('consulta')
+        var res = document.getElementById('res')
+        var nacionalidade = (country.value)
+
+        res.innerHTML = `<P>Você digitou <strong>${nacionalidade}</strong></P>`
+
+        if (nacionalidade == 'brasil') {
+            res.innerHTML += `Você é <strong>BRASILEIRO!</strong>`
+        }
+
+        else {
+            res.innerHTML += `Você é <strong>ESTRANGEIRO</strong>!`
+        }
+
+
+    }
+
+    </script>
+
+<footer> &copy; Guilherme </footer>
+    
+</body>
+
+</html>
